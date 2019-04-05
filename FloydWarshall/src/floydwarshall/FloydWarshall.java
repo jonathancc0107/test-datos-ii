@@ -2,6 +2,16 @@ package floydwarshall;
 
 public class FloydWarshall {
 
+    static int INF=999;     
+    static int[][] M = {    
+                        {0  , INF, 9  ,  2  , INF}, 
+                        {2  , 0  , INF,  INF, 3  }, 
+                        {INF, 2  , 0  ,  2  , 3  }, 
+                        {1  , INF, INF,  0  , 4  }, 
+                        {INF, 2  , INF,  INF, 0  }, 
+                                
+                       };
+    
     static void floyd_warshall(int grafo[][]) {
         int n = grafo.length, tmp;
         //crear matriz de distancia
@@ -34,13 +44,14 @@ public class FloydWarshall {
         System.out.println("");
         for (int i = 0; i < M.length; i++) {
             for (int j = 0; j < M.length; j++) {
-                System.out.println(" "+M[i][j]);
+                System.out.print(" "+M[i][j]);
             }
+            System.out.println("");
         }
     }
 
     public static void main(String[] args) {
-
+        floyd_warshall(M);
     }
 
 }
